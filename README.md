@@ -1,13 +1,16 @@
 # The Meteor 1.8 dev build process doesn't include changes to postcss
 
-If you change the content of the main.css file and save, it will update the UI on reload.
+## Steps to see the error
+```
+git clone https://github.com/mcissel/postcssBuild.git
+cd postcssBuild
+meteor npm install
+meteor
+```
 
-If you change the content of the style.css file and save, the terminal says `Client modified -- refreshing (x2)`
+Then Change the content of /imports/style.css and save. The terminal says `Client modified -- refreshing (x2)`, but the UI _doesn't_ change
 
-but the UI _doesn't_ change
-
-
-Steps to create this repo
+## Steps to create this repo
 ```
 meteor create --react postcssBuild
 cd postcssBuild
@@ -26,3 +29,4 @@ add the following to the top of /client/main.css:
 @import "../imports/style";
 ```
 run `meteor`
+
